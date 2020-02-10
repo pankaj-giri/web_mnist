@@ -1,7 +1,8 @@
 Dependencies - node
 npm install connect serve-static
 
-2 processes need to be started..
+This project offers a web interface to the MNIST digit recognition model which is tensorflow based.
+Follow the steps to fire it up and enjoy..
 
 1) cd webmnist-frontend; node serve.js 
 This command serves up the html UI on port 8081
