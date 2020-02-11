@@ -38,6 +38,8 @@ cd webmnist-frontend; node serve.js
 3) Open up a browser and type "http://localhost:8181"
 This shows up an html canvas. Draw your digit there and press submit to get the prediction out.
 
+![webmnist-demo](./demo.gif)
+
 
 ## Author
 
