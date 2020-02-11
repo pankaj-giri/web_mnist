@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create HTML5 Canvas JavaScript Drawing App Example</title>
+  </head>
+  <body>
+    <div id="canvasDiv"></div>
+    <!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+    <script type="text/javascript" src="html5-canvas-drawing-app.js"></script>
+    <script type="text/javascript">
+    	 drawingApp.init();
+	</script>
+    <button id="post_button", onclick="click_function()", type="submit">submit</button>
+    <button id="clear_button", onclick="clearCanvas()">clear</button>
+    <script ,type="text/javascript">
+
+        function click_function() {
+            var canvas = document.getElementById("canvas");
+            var image = canvas.toDataURL("image/png");
+            image = image.replace('data:image/png;base64,', '');
+            
+            var url = 'http://0.0.0.0:8080/predict_input'
+
+            var formData = new FormData();
+            formData.append("file", image);
+
+            var request = new XMLHttpRequest();
+            
+            request.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    clearCanvas();
+                    switch(request.responseText) {
+                        case "0" : 
+                            loadImage("zero")
+                            break;
+                        case "1" :
+                            loadImage("one")
+                            break;
+                        case "2":
+                            loadImage("two")
+                            break;
+                        case "3":
+                            loadImage("three")
+                            break;
+                        case "4":
+                            loadImage("four")
+                            break;
+                        case "5" : 
+                            loadImage("five")
+                            break;
+                        case "6" :
+                            loadImage("six")
+                            break;
+                        case "7":
+                            loadImage("seven")
+                            break;
+                        case "8":
+                            loadImage("eight")
+                            break;
+                        case "9":
+                            loadImage("nine")
+                            break;
+                        default:
+                            loadImage("zero")
+                            break;
+                            
+                    }
+                    console.log(request.responseText)
+                }
+            };
+
+            request.open("POST", url, true);
+            request.send(formData);
+        };
+        
+        // Clears the canvas.
+		function clearCanvas () {
+            var canvas = document.getElementById("canvas");
+            context = canvas.getContext("2d");
+            context.canvas.width = context.canvas.width;
+            drawingApp.wipeout()
+		};
+        
+        function loadImage(text) {
+            var canvas = document.getElementById("canvas");
+            context = canvas.getContext("2d");      
+            context.font = "40pt Calibri";
+            context.fillStyle = "cyan";
+            context.fillText(text, 60, 100);            
+//            context.drawImage(image, 0, 0, 200, 200);
+        };
+      </script>
+  </body>
+</html>
