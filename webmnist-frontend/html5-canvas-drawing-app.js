@@ -229,7 +229,7 @@ var drawingApp = (function () {
 
 			release = function () {
 				paint = false;
-				redraw();
+				//redraw();
 			},
 
 			cancel = function () {
