@@ -12,7 +12,7 @@
 	</script>
     <button id="post_button", onclick="click_function()", type="submit">submit</button>
     <button id="clear_button", onclick="clearCanvas()">clear</button>
-    <script ,type="text/javascript">
+    <script type="text/javascript">
 
         function click_function() {
             var canvas = document.getElementById("canvas");
@@ -29,42 +29,42 @@
             request.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     clearCanvas();
-                    switch(request.responseText) {
-                        case "0" : 
-                            loadImage("zero")
-                            break;
-                        case "1" :
-                            loadImage("one")
-                            break;
-                        case "2":
-                            loadImage("two")
-                            break;
-                        case "3":
-                            loadImage("three")
-                            break;
-                        case "4":
-                            loadImage("four")
-                            break;
-                        case "5" : 
-                            loadImage("five")
-                            break;
-                        case "6" :
-                            loadImage("six")
-                            break;
-                        case "7":
-                            loadImage("seven")
-                            break;
-                        case "8":
-                            loadImage("eight")
-                            break;
-                        case "9":
-                            loadImage("nine")
-                            break;
-                        default:
-                            loadImage("zero")
-                            break;
-                            
-                    }
+                    loadImage(request.responseText);
+                    // switch(request.responseText) {
+                    //     case "0" : 
+                    //         loadImage("zero")
+                    //         break;
+                    //     case "1" :
+                    //         loadImage("one")
+                    //         break;
+                    //     case "2":
+                    //         loadImage("two")
+                    //         break;
+                    //     case "3":
+                    //         loadImage("three")
+                    //         break;
+                    //     case "4":
+                    //         loadImage("four")
+                    //         break;
+                    //     case "5" : 
+                    //         loadImage("five")
+                    //         break;
+                    //     case "6" :
+                    //         loadImage("six")
+                    //         break;
+                    //     case "7":
+                    //         loadImage("seven")
+                    //         break;
+                    //     case "8":
+                    //         loadImage("eight")
+                    //         break;
+                    //     case "9":
+                    //         loadImage("nine")
+                    //         break;
+                    //     default:
+                    //         loadImage("zero")
+                    //         break;                          
+                    // }
                     console.log(request.responseText)
                 }
             };
