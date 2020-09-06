@@ -15,6 +15,7 @@ pip install keras==2.3.1
 pip install tensorflow==1.15.0
 pip install flask==1.1.2
 pip install flask_Cors==3.0.9
+pip install opencv-python==3.4.9.31
 ```
 You will also need node installed.
 Node dependencies -
